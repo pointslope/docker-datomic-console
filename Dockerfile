@@ -4,7 +4,6 @@ MAINTAINER Christian Romney "cromney@pointslope.com"
 
 ENV DATOMIC_VERSION 0.9.5130
 ENV DATOMIC_HOME /opt/datomic-pro-$DATOMIC_VERSION
-ENV DATOMIC_DATA $DATOMIC_HOME/data
 
 # Datomic Pro Starter as easy as 1-2-3
 # 1. Create a .credentials file containing user:pass
@@ -17,15 +16,12 @@ ONBUILD RUN curl -u $(cat /tmp/.credentials) -SL https://my.datomic.com/repo/com
   && unzip /tmp/datomic.zip -d /opt \
   && rm -f /tmp/datomic.zip
 
-ONBUILD ADD config $DATOMIC_HOME/config
-
 WORKDIR $DATOMIC_HOME
 
-ENTRYPOINT ["bin/transactor"]
+# 3. Provide a CMD with an alias to the database
+# and the database uri
+# e.g. CMD ["dev", "datomic:dev://db:4334/"]
+ENTRYPOINT ["bin/console", "-p", "9000"]
 
-# 3. Provide a CMD argument with the relative path to the
-# transactor.properties file it will supplement the ENTRYPOINT
-VOLUME $DATOMIC_DATA
-
-EXPOSE 4334 4335 4336
+EXPOSE 9000
 
