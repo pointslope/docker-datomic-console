@@ -1,13 +1,12 @@
-# Datomic Pro Starter
+# Datomic Console
 
-This Dockerfile defines a base image for Datomic Pro Starter Edition. It defines the necessary automation steps for running Datomic, while deferring all privileged, user-specific configuration to a derived image via **ONBUILD** instructions.
+This Dockerfile defines a base image for the version of Datomic Console that ships with Datomic Pro Starter Edition. It defines the necessary automation steps for running Datomic Console, while deferring all privileged, user-specific configuration to a derived image via **ONBUILD** instructions.
 
 This approach makes it trivial to customize your own Dockerfile to run any supported Datomic configuration. To do so, you need only to follow these steps:
 
 1. Create a `Dockerfile` that is based **FROM** this image
 2. Create a `.credentials` file containing your http user and password for downloading from **my.datomic.com** in the form `user:pass`
-3. Create a `config` folder where your `Dockerfile` resides and place your Datomic transactor.properties config file(s) within it
-4. Add a **CMD** instruction in your `Dockerfile` with the relative path to that file e.g. **config/riak.properties**
+3. Add a **CMD** instruction in your `Dockerfile` with an alias for the Datomic database you wish to connect to and the Datomic uri e.g. **datomic:dev://db:4334/**
 
 No other configuration is necessary. Simply **docker build** and **docker run** your image.
 
@@ -15,25 +14,27 @@ No other configuration is necessary. Simply **docker build** and **docker run** 
 
     .
     ├── .credentials
-    ├── Dockerfile
-    └── config
-        └── dev-transactor.properties
+    └── Dockerfile
     
 ## Example Dockerfile
 
-    FROM pointslope/docker-datomic:0.9.5078
+    FROM pointslope/docker-datomic-console:0.9.5130
     MAINTAINER Christian Romney "cromney@pointslope.com"
-    CMD ["config/dev-transactor.properties"]
+    CMD ["dev", "datomic:dev://db:4334/"]
 
 ## Miscellany
 
-The Dockerfile **EXPOSES** port 4334 and establises a **VOLUME** at `/opt/datomic-pro-$DATOMIC_VERSION/data`.
+The Dockerfile **EXPOSES** port 9000. Once the container is running, open the following url to view Datomic Console:
+
+    http://{host}:9000/browse
+
+where {host} represents the IP address or hostname of the host running the Docker container. If you are using **boot2docker**, you can obtain the ip address by executing `boot2docker ip` at the shell.
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Point Slope, LLC.
+Copyright (c) 2015 Point Slope, LLC.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
