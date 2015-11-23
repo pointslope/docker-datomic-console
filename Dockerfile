@@ -1,8 +1,8 @@
-FROM pointslope/clojure:lein-2.5.0
+FROM pointslope/clojure:lein-2.5.3
 
 MAINTAINER Christian Romney "cromney@pointslope.com"
 
-ENV DATOMIC_VERSION 0.9.5130
+ENV DATOMIC_VERSION 0.9.5327
 ENV DATOMIC_HOME /opt/datomic-pro-$DATOMIC_VERSION
 
 # Datomic Pro Starter as easy as 1-2-3
@@ -24,4 +24,3 @@ WORKDIR $DATOMIC_HOME
 ENTRYPOINT ["bin/console", "-p", "9000"]
 
 EXPOSE 9000
-
