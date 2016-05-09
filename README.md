@@ -34,7 +34,7 @@ where {host} represents the IP address or hostname of the host running the Docke
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Point Slope, LLC.
+Copyright (c) 2015-2016 Point Slope, LLC.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
