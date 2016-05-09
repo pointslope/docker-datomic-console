@@ -1,8 +1,8 @@
-FROM pointslope/clojure:lein-2.5.3
+FROM pointslope/clojure:lein-2.6.1
 
 MAINTAINER Christian Romney "cromney@pointslope.com"
 
-ENV DATOMIC_VERSION 0.9.5344
+ENV DATOMIC_VERSION 0.9.5359
 ENV DATOMIC_HOME /opt/datomic-pro-$DATOMIC_VERSION
 
 # Datomic Pro Starter as easy as 1-2-3
