@@ -18,7 +18,7 @@ No other configuration is necessary. Simply **docker build** and **docker run** 
 
 ## Example Dockerfile
 
-    FROM pointslope/datomic-console:0.9.5372
+    FROM pointslope/datomic-console:0.9.5385
     MAINTAINER John Doe "jdoe@example.org"
     CMD ["dev", "datomic:dev://db:4334/"]
 
