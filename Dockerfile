@@ -1,9 +1,11 @@
-FROM pointslope/clojure:lein-2.6.1
+FROM clojure:lein-2.6.1-alpine
 
 MAINTAINER Christian Romney "cromney@pointslope.com"
 
 ENV DATOMIC_VERSION 0.9.5385
 ENV DATOMIC_HOME /opt/datomic-pro-$DATOMIC_VERSION
+
+RUN apk add --no-cache unzip curl
 
 # Datomic Pro Starter as easy as 1-2-3
 # 1. Create a .credentials file containing user:pass
