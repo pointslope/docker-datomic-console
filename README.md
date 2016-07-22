@@ -1,7 +1,7 @@
 # Datomic Console
 
 This Dockerfile defines a base image for the version of Datomic
-Console that ships with Datomic Pro Starter Edition. It defines the
+Console that ships with [Datomic Pro Starter Edition](http://www.datomic.com/). It defines the
 necessary automation steps for running Datomic Console, while
 deferring all privileged, user-specific configuration to a derived
 image via **ONBUILD** instructions.
