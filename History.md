@@ -1,4 +1,9 @@
 
+0.9.5390 / 2016-08-10
+==================
+Updated to Datomic version 0.9.5390
+Link to Datomic homepage
+
 0.9.5385-alpine / 2016-07-22
 ============================
 
