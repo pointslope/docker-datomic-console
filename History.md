@@ -1,3 +1,6 @@
+0.9.5561 / 2017-03-31
+==================
+Updated to Datomic version 0.9.5561
 
 0.9.5544 / 2016-12-08
 ==================
@@ -41,4 +44,3 @@ Updated to Leiningen 2.6.1
 
 Updated to Datomic version 0.9.5344.
 Fixes broken console in 0.9.5327.
-
