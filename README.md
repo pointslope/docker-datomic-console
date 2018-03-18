@@ -29,7 +29,7 @@ No other configuration is necessary. Simply **docker build** and
 
 ## Example Dockerfile
 
-    FROM pointslope/datomic-console:0.9.5561
+    FROM optimis/datomic-console:0.9.5561
     MAINTAINER John Doe "jdoe@example.org"
     CMD ["dev", "datomic:dev://db:4334/"]
 
@@ -47,7 +47,7 @@ the Docker container.
 
 The MIT License (MIT)
 
-Copyright (c) 2015-2017 Point Slope, LLC.
+Copyright (c) 2018-2020 Optimis Services, Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
