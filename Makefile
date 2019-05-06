@@ -1,4 +1,4 @@
-DOCKER_IMAGE=pointslope/docker-datomic-console
+DOCKER_IMAGE=quay.io/parkside-securities/docker-datomic-console
 DOCKER_TAG?=$(shell ./datomic-version)
 
 .PHONY: all clean info

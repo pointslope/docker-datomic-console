@@ -1,3 +1,7 @@
+0.9.5786 / 2019-05-06
+==================
+Updated to Datomic version 0.9.5786
+
 0.9.5561 / 2017-03-31
 ==================
 Updated to Datomic version 0.9.5561
